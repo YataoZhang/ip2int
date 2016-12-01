@@ -6,28 +6,35 @@ Convert ip to int32 and vice versa.
 
 Install with [npm](http://github.com/isaacs/npm):
 
-    npm install ip2int
+You can installed into the global.
+```shell
+$ npm install -g ip2int
+```
 
+Also installed into the project.
+```shell
+$ npm install ip2int --save
+```
 ## Contributing / Testing
-
-    npm run test
-
+```shell
+$ npm run test
+```
 ## Command Line
 If you do not enter any value, the default return to the machine IP address
-
-    ip2int [ip_address | int32]
-
+```shell
+$ ip2int [ip_address | int32]
+```
 E.g.
+```shell
+$ ip2int 127.0.0.1
+  16777343
 
-    > ip2int 127.0.0.1
-    16777343
-
-    > ip2int 16777343
-    127.0.0.1
+$ ip2int 16777343
+  127.0.0.1
     
-    > ip2int
-    172.22.156.37
-
+$ ip2int
+  172.22.156.37
+```
 ## API
 
 ### ip2int.lookup(addressInfo)
