@@ -43,16 +43,16 @@ Lookup address info.
 ```js
 var ip2int = require('ip2int');
 
-mime.lookup('127.0.0.1');         // => 16777343
-mime.lookup(16777343);            // => '127.0.0.1'
-mime.lookup();                    // => 172.22.156.37
+ip2int.lookup('127.0.0.1');         // => 16777343
+ip2int.lookup(16777343);            // => '127.0.0.1'
+ip2int.lookup();                    // => 172.22.156.37
 ```
 
 ### ip2int.ip2int(ip)
 The ip address resolves to int32
 
 ```js
-ip2int.int2ip('192.168.10.17');   // => 285911232
+ip2int.ip2int('192.168.10.17');   // => 285911232
 ```
 
 ### ip2int.int2ip(int)
