@@ -3,6 +3,7 @@
  * Created by zhangyatao on 2016/12/1.
  */
 var util = require('util');
+var net = require('net');
 var os = require('os');
 
 function getLocalIP() {
@@ -20,10 +21,11 @@ function ip2int(ip) {
     if (!util.isString(ip)) {
         return 0;
     }
-    var ipPart = ip.split('.');
-    if (ipPart.length !== 4) {
+    var isipv4 = net.isIPv4(ip);
+    if (!isipv4) {
         return 0;
     }
+    var ipPart = ip.split('.');
     var normalIp = ipPart.map(function (int) {
         return int & 0xff;
     });
