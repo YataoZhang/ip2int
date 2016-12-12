@@ -5,8 +5,7 @@
 var util = require('util');
 var net = require('net');
 var os = require('os');
-
-module.exports.getLocalIP = function getLocalIP() {
+function getLocalIP() {
     var network = os.networkInterfaces();
     for (var len = network.en0.length; len-- >= 0;) {
         var info = network.en0[len];
@@ -16,8 +15,7 @@ module.exports.getLocalIP = function getLocalIP() {
     }
     return '127.0.0.1';
 }
-
-module.exports.ip2int = function ip2int(ip) {
+function ip2int(ip) {
     if (!util.isString(ip)) {
         return 0;
     }
@@ -31,15 +29,13 @@ module.exports.ip2int = function ip2int(ip) {
     });
     return (new Buffer(normalIp)).readUInt32LE(0, true);
 }
-
-module.exports.int2ip = function int2ip(int) {
+function int2ip(int) {
     int = parseInt(int, 10);
     var buf = new Buffer(4);
     buf.writeUInt32LE(int, 0);
     var address = buf.toJSON().data;
     return address.join('.');
 }
-
 module.exports.lookup = function lookup(info) {
     if (info === undefined) {
         return getLocalIP();
@@ -48,4 +44,7 @@ module.exports.lookup = function lookup(info) {
         return ip2int(info);
     }
     return int2ip(info);
-}
+};
+module.exports.getLocalIP = getLocalIP;
+module.exports.ip2int = ip2int;
+module.exports.int2ip = int2ip;

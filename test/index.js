@@ -10,9 +10,9 @@ assert.equal(0, ip2int.ip2int('127.0.0'));
 assert.equal(0, ip2int.ip2int());
 assert.equal('192.168.10.17', ip2int.int2ip(285911232));
 assert.equal('127.0.0.1', ip2int.int2ip(16777343));
-assert.equal('172.22.156.37', ip2int.lookup());
+assert.equal('172.22.156.28', ip2int.lookup());
 assert.equal(285911232, ip2int.lookup('192.168.10.17'));
 assert.equal('192.168.10.17', ip2int.lookup(285911232));
-assert.equal('172.22.156.37', ip2int.getLocalIP());
+assert.equal('172.22.156.28', ip2int.getLocalIP());
 
 console.log('\nAll tests passed');
